@@ -5,53 +5,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:screenOrientation="landscape"
+    android:theme = "@android:style/Theme.NoTitleBar.Fullscreen"
     tools:context="ryanheath.blackjack.BlackjackActivity"
     tools:layout_editor_absoluteY="73dp">
 
     <Button
         android:id="@+id/hit"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="18dp"
         android:text="Hit"
         tools:layout_editor_absoluteX="171dp"
         tools:layout_editor_absoluteY="131dp" />
 
     <Button
         android:id="@+id/stand"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/surfaceView"
-        android:layout_marginLeft="82dp"
-        android:layout_marginStart="82dp"
+        android:layout_below="@+id/GameView"
+        android:layout_marginLeft="72dp"
+        android:layout_marginStart="72dp"
         android:layout_toEndOf="@+id/hit"
         android:layout_toRightOf="@+id/hit"
         android:text="Stand"
         tools:layout_editor_absoluteX="369dp"
         tools:layout_editor_absoluteY="131dp" />
 
-    <SurfaceView
-        android:id="@+id/surfaceView"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/bet"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/betText"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_toLeftOf="@+id/betText"
+        android:layout_toStartOf="@+id/betText"
+        android:text="Bet" />
+
+    <view
+        android:id="@+id/GameView"
+        class="ryanheath.blackjack.GameView"
+        android:layout_width="match_parent"
+        android:layout_height="147dp"
         android:layout_above="@+id/hit"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />
 
-    <Button
-        android:id="@+id/bet"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/betText"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/surfaceView"
-        android:layout_marginLeft="42dp"
-        android:layout_marginStart="42dp"
-        android:text="Bet" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:layout_toLeftOf="@+id/hit"
+        android:layout_toStartOf="@+id/hit"
+        android:inputType="number"
+        android:text="0" />
 
 </RelativeLayout>
