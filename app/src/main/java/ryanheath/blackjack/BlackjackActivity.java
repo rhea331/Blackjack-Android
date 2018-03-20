@@ -25,11 +25,11 @@ public class BlackjackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blackjack);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); //force full screen landscape
         mGameView = findViewById(R.id.GameView);
         mTextView = findViewById(R.id.betText);
 
-
+        //setting up hit, stand and bet buttons
         hit = findViewById(R.id.hit);
         hit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,10 +64,12 @@ public class BlackjackActivity extends AppCompatActivity {
             }
         });
     }
-
-    public int getIntFromTextView() {
+    /**
+     * Grabs the number in the bet TextView.
+     */
+    public int getIntFromTextView() {//get number from bet text view,
         if(TextUtils.isEmpty(mTextView.getText())){
-            return -1;
+            return -1; //no text, returns invalid number
         }else{
             return(Integer.parseInt(mTextView.getText().toString()));
         }

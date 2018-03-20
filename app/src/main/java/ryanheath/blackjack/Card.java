@@ -63,8 +63,8 @@ public class Card {
 		else{flipped = false;}
 	}
 
-	/** Returns name of .bmp file
-	 * @return location    the name of the card in res
+	/** Returns location of card in card array
+	 * @return locationNo  the location of the card
 	 */
 	public int getImageLocation(){
 		int locationNo = (face.returnValue()-1) * 4;
